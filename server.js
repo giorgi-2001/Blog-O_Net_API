@@ -1,6 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 const express = require('express')
+const cors = require('cors')
 
 const blogRoutes = require('./routes/blogRoutes')
 const userRoutes = require('./routes/userRoutes')
@@ -11,6 +12,8 @@ port = process.env.PORT || 4000
 
 const app = express()
 
+
+app.use(cors())
 
 app.use(express.json())
 
